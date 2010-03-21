@@ -1,1 +1,6 @@
 My dotfiles.
+
+
+There is probably a better way to do this..
+
+find .dotfiles/.oh-my-zsh -type f -exec ln -s $HOME/{} .oh-my-zsh/custom/ \;
