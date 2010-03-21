@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/Users/trcjr/u/whiteJack/whiteJack/BasicStrategy'
+let g:netrw_dirhist_2='/Users/trcjr/u/whiteJack/whiteJack/Player'
+let g:netrw_dirhist_3='/Users/trcjr/u/whiteJack'
+let g:netrw_dirhist_4='/Users/trcjr/u/whiteJack/whiteJack'
+let g:netrw_dirhist_5='/Users/trcjr/u/whiteJack'
+let g:netrw_dirhist_6='/Users/trcjr/u/whiteJack/whiteJack'
+let g:netrw_dirhist_7='/Users/trcjr/djenv/picfight'
+let g:netrw_dirhist_8='/Users/trcjr/djenv/picfight/fyr'
