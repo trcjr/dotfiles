@@ -48,3 +48,8 @@ alias -g L='| less'
 alias -g H='| head'
 alias -g S='| sort'
 alias -g T='| tail'
+
+
+## rtorrent
+alias rtorrent='stty stop undef; stty start undef; /usr/bin/rtorrent'
+
