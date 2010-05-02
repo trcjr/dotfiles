@@ -32,6 +32,8 @@ set autoindent
 set backspace=indent,eol,start
 " shows the match while typing
 set incsearch
+" highlight all search pattern matches
+set hlsearch
 " case insensitive search
 set ignorecase
 " show line and column number
