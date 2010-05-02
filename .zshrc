@@ -8,16 +8,12 @@ export ZSH=$HOME/.oh-my-zsh
 export ZSH_THEME="trcjr"
 
 # Set to this to use case-sensitive completion
-# export CASE_SENSITIVE="true"
+export CASE_SENSITIVE="true"
 
 # Comment this out to disable weekly auto-update checks
-# export DISABLE_AUTO_UPDATE="true"
+export DISABLE_AUTO_UPDATE="true"
 
 # Uncomment following line if you want to disable colors in ls
 # export DISABLE_LS_COLORS="true"
 
 source $ZSH/oh-my-zsh.sh
-
-# Customize to your needs...
-export WORKON_HOME=$HOME/.virtualenvs
-source /usr/local/bin/virtualenvwrapper_bashrc
