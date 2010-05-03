@@ -1,6 +1,6 @@
 # Setup ssh-agent and load keys
 
-SSH_ENV="$HOME/.ssh/environment"
+SSH_ENV="$HOME/.ssh/environment-$HOST"
 
 function start_agent {
      echo "Initialising new SSH agent..."
@@ -16,7 +16,7 @@ function start_agent {
 if [ -f "${SSH_ENV}" ]; then
      source "${SSH_ENV}" > /dev/null
      #ps ${SSH_AGENT_PID} doesn't work under cywgin
-     ps -x | grep ${SSH_AGENT_PID} | grep ssh-agent > /dev/null || {
+     ps x | grep ${SSH_AGENT_PID} | grep ssh-agent > /dev/null || {
          start_agent;
      }
 else
