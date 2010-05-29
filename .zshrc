@@ -17,3 +17,16 @@ export DISABLE_AUTO_UPDATE="true"
 # export DISABLE_LS_COLORS="true"
 
 source $ZSH/oh-my-zsh.sh
+
+# Customize to your needs...
+export WORKON_HOME=$HOME/.virtualenvs
+#source /usr/local/bin/virtualenvwrapper_bashrc
+
+export PATH=$PATH:/usr/local/sbin
+
+
+# Use virtualenvwrapper (http://www.doughellmann.com/projects/virtualenvwrapper/) if it is installed.
+VIRTUALENV_WRAPPER=/usr/local/bin/virtualenvwrapper_bashrc
+if [[ -s $VIRTUALENV_WRAPPER ]]; then export WORKON_HOME=$HOME/.virtualenvs; source $VIRTUALENV_WRAPPER; fi
+# Use rvm (http://rvm.beginrescueend.com/) if it is installed.
+if [[ -s $HOME/.rvm/scripts/rvm ]] ; then source $HOME/.rvm/scripts/rvm ; fi
