@@ -4,3 +4,14 @@
 setopt NOCLOBBER
 ## watch other user login/out
 #watch=notme
+
+setopt \
+    no_beep \
+    correct \
+    auto_list \
+    complete_in_word \
+    auto_pushd \
+    complete_aliases \
+    extended_glob \
+    zle
+
