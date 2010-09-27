@@ -27,6 +27,7 @@ alias acd='apt-cache depends'
 ## admin specific
 alias stf='sudo tail -f'
 alias stn='sudo tail -n'
+alias vim='vim -X'
 alias sv='sudo vim'
 
 ## play safe
