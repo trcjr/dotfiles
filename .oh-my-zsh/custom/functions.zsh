@@ -33,3 +33,23 @@ function cert_check {
     #echo '' | openssl s_client -connect sd06.securesites.net:443 -cert ~apikeys/ittest.crt -key ~apikeys/ittest.key 2> /dev/null |grep subject | sed 's/.*CN=//' | sed s'/\/.*//'
     #echo "hiii"
 }
+
+function pathmunge {
+    if ! echo $PATH | /bin/egrep -q "(^|:)$1($|:)" ; then
+       if [ "$2" = "after" ] ; then
+          PATH=$PATH:$1
+       else
+          PATH=$1:$PATH
+       fi
+    fi
+}
+
+
+function splitstringby {
+    string=$1
+    delimeter=$2
+    for x in $( echo $PATH | tr ${delimeter} "\n" )
+    do
+        echo $x
+    done
+}
