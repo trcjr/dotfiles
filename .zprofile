@@ -68,5 +68,3 @@ export CVS_RSH ORACLE_HOME LD_LIBRARY_PATH PERL5LIB NLS_LANG LANG
 export NLS_DATE_FORMAT=dd-MON-yyyy
 
 source $ZSH/oh-my-zsh.sh
-#case "$-" in *i*) byobu-launcher -xRR -T screen-w; esac;
-case "$-" in *i*) byobu-launcher -xRR; esac;
