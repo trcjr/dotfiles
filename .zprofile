@@ -1,6 +1,8 @@
 
 #export BAT_CHARGE=~/bin/batcharge.py
 
+DISABLE_AUTO_UPDATE="true"
+
 # Disable shared history
 unsetopt share_history
 
@@ -48,6 +50,23 @@ export DISPLAY=:0.0
 
 export EDITOR="$( which vim ) -X"
 
-export PERL5LIB=/Users/trcjr/.local/lib/perl5/site_perl/5.12.1
+
+CVS_RSH=ssh
+if [ -e "/u01" ]; then
+    ORACLE_HOME=/u01/app/oracle/produc/10.2.0_client
+else
+    ORACLE_HOME=/usr/local/oracle
+fi
+#pathmunge $ORACLE_HOME/bin after
+LD_LIBRARY_PATH=$ORACLE_HOME/lib
+#export PERL5LIB=/Users/trcjr/.local/lib/perl5/site_perl/5.12.1
+export PERL5LIB=/usr/local/vwh/library/perl:/usr/local/vwh/library/CPAN
+NLS_LANG=AMERICAN_AMERICA.AL32UTF8
+LANG=en_US.UTF-8
+
+export CVS_RSH ORACLE_HOME LD_LIBRARY_PATH PERL5LIB NLS_LANG LANG
+export NLS_DATE_FORMAT=dd-MON-yyyy
 
 source $ZSH/oh-my-zsh.sh
+#case "$-" in *i*) byobu-launcher -xRR -T screen-w; esac;
+case "$-" in *i*) byobu-launcher -xRR; esac;
