@@ -73,7 +73,8 @@ autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,
 
 set iskeyword-=_
 "set formatoptions=wroqa2t
-colorscheme koehler
+"colorscheme koehler
+colorscheme leo
 "au WinLeave * set nocursorline nocursorcolumn
 "au WinEnter * set cursorline cursorcolumn
 "set cursorline cursorcolumn
