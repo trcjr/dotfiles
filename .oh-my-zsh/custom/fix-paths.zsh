@@ -34,6 +34,10 @@ then
     pathmunge ${HOME}/.local/bin
 fi
 
+if [ -d ${HOME}/bin ];
+then
+    pathmunge ${HOME}/bin
+fi
 #BEFORE_PATHS="${HOME}/.local/bin /usr/local"
 #echo "before"
 #echo $PATH
