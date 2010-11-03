@@ -1,6 +1,3 @@
-
-#export BAT_CHARGE=~/bin/batcharge.py
-
 # Disable shared history
 unsetopt share_history
 
@@ -53,3 +50,8 @@ export CVS_RSH ORACLE_HOME LD_LIBRARY_PATH PERL5LIB NLS_LANG LANG
 export NLS_DATE_FORMAT=dd-MON-yyyy
 
 source $ZSH/oh-my-zsh.sh
+
+if [ -e $HOME/.zprofile_local ];then
+    source $HOME/.zprofile_local
+fi
+
