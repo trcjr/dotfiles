@@ -34,15 +34,6 @@ export EDITOR="$( which vim ) -X"
 
 CVS_RSH=ssh
 
-if [ -e "/u01" ]; then
-    ORACLE_HOME=/u01/app/oracle/produc/10.2.0_client
-else
-    ORACLE_HOME=/usr/local/oracle
-fi
-
-
-export CVS_RSH ORACLE_HOME LD_LIBRARY_PATH PERL5LIB NLS_LANG LANG
-export NLS_DATE_FORMAT=dd-MON-yyyy
 source /home/trcjr/perl5/perlbrew/etc/bashrc
 
 source $ZSH/oh-my-zsh.sh
