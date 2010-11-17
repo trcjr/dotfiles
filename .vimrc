@@ -35,7 +35,7 @@ set incsearch
 " highlight all search pattern matches
 set hlsearch
 " case insensitive search
-set ignorecase
+set noignorecase
 " show line and column number
 set ruler
 " show some autocomplete options in status bar
@@ -71,10 +71,11 @@ autocmd BufRead,BufNewFile *.py syntax on
 autocmd BufRead,BufNewFile *.py set ai
 autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 
-set iskeyword-=_
+"set iskeyword-=_
 "set formatoptions=wroqa2t
 "colorscheme koehler
 colorscheme leo
+"colorscheme desert256
 "au WinLeave * set nocursorline nocursorcolumn
 "au WinEnter * set cursorline cursorcolumn
 "set cursorline cursorcolumn
