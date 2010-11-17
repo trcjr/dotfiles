@@ -34,15 +34,6 @@ export EDITOR="$( which vim ) -X"
 
 CVS_RSH=ssh
 
-if [ -e "/u01" ]; then
-    ORACLE_HOME=/u01/app/oracle/produc/10.2.0_client
-else
-    ORACLE_HOME=/usr/local/oracle
-fi
-
-
-export CVSROOT=":ext:tcampbell@cvs.vwh.net/cvsroot"
-
 
 source $ZSH/oh-my-zsh.sh
 
