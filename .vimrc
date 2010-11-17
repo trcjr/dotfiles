@@ -83,3 +83,5 @@ colorscheme leo
 "hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
 "nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
 
+"highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+"match OverLength /\%81v.\+/

@@ -41,12 +41,18 @@ else
 fi
 
 
-export CVSROOT=":ext:tcampbell@cvs.vwh.net/cvsroot"
-
+export CVS_RSH ORACLE_HOME LD_LIBRARY_PATH PERL5LIB NLS_LANG LANG
+export NLS_DATE_FORMAT=dd-MON-yyyy
+source /home/trcjr/perl5/perlbrew/etc/bashrc
 
 source $ZSH/oh-my-zsh.sh
 
 if [ -e $HOME/.zprofile_local ];then
     source $HOME/.zprofile_local
 fi
+
+export MODULEBUILDRC="$HOME/perl5/.modulebuildrc"
+export PERL_MM_OPT="INSTALL_BASE=$HOME/perl5"
+export PERL5LIB="$HOME/perl5/lib/perl5/i486-linux-gnu-thread-multi:$HOME/perl5/lib/perl5:$PERL5LIB"
+export PATH="$HOME/perl5/bin:$PATH"
 

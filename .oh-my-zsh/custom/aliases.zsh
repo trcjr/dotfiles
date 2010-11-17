@@ -54,3 +54,7 @@ alias -g T='| tail'
 alias rtorrent='stty stop undef; stty start undef; /usr/bin/rtorrent'
 
 alias pmver="$( which perl ) -le '\$m = shift; eval qq(require \$m) or die qq(module \"\$m\" is not installed\\n); (\$f = \$m) =~ s@::@/@g; \$f .= \".pm\"; print qq(Location: \$INC{\$f}); if (not defined \$m->VERSION) { print qq(\"\$m\" has no VERSION specified\\n) } else { print qq(Version: ), \$m->VERSION }'" 
+
+
+#alias cover="TEST_VERBOSE=1 HARNESS_PERL_SWITCHES=-MDevel::Cover=+select,/usr/local/vwh/library/perl prove -lvr --color --state=save --timer"
+alias cover="TEST_VERBOSE=1 prove -lvr --color --state=save --timer"
