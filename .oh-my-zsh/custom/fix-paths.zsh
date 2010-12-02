@@ -4,63 +4,18 @@ export DISPLAY=:0.0
 
 export PERL5LIB=${PERL5LIB}:${HOME}/.local/lib/perl5/site_perl/5.10.1
 
-DIRS="/opt/local/bin /opt/local/sbin ${HOME}/.local/bin ${HOME}/bin $HOME/android-sdk-mac_86/tools"
-for dir in $DIRS;
-do
-    if [ -d $dir ];
-    then
-        echo "Addinng $dir to path"
-        pathmunge $dir
-    fi
-done
-
-#export PATH=${HOME}/bin:${HOME}/.epic/bin:/sys/sdf/bin:${HOME}/.gem/ruby/1.8/bin:${PATH}
-#
-if [ -d $HOME/android-sdk-mac_86/tools ];
-MANPATH=/opt/local/share/man:${MANPATH}
-
 if [ -d /opt/local/share/man ];
 then
     export MANPATH=/opt/local/share/man:${MANPATH}
 fi
 
-#if [ -d $HOME/android-sdk-mac_86/tools ];
-#then
-#    pathmunge $HOME/android-sdk-mac_86/tools
-#fi
-#
-#
-#if [ -d /opt/local/bin ];
-#then
-#    pathmunge /opt/local/bin
-#fi
-#
-#if [ -d /opt/local/sbin ];
-#then
-#    pathmunge /opt/local/sbin
-#fi
-#
-#if [ -d ${HOME}/.local/bin ];
-#then
-#    pathmunge ${HOME}/.local/bin
-#fi
-#
-#if [ -d ${HOME}/bin ];
-#then
-#    pathmunge ${HOME}/bin
-#fi
+BEFORE_PATHS=(/usr/local/bin /opt/local/bin /opt/local/sbin /usr/local/bin /usr/local/sbin $HOME/perl5/bin $HOME/.local/bin ${HOME}/bin)
+for p in $BEFORE_PATHS
+do
+    if [ -d ${p} ]; then;
+        pathmunge ${p}
+    fi
+done
+#./.zprofile:export PERL5LIB="$HOME/perl5/lib/perl5/i486-linux-gnu-thread-multi:$HOME/perl5/lib/perl5:$PERL5LIB"
+#./.oh-my-zsh/custom/fix-paths.zsh:export PERL5LIB=${PERL5LIB}:${HOME}/.local/lib/perl5/site_perl/5.10.1
 
-if [ -d ${HOME}/bin ];
-then
-    pathmunge ${HOME}/bin
-fi
-#BEFORE_PATHS="${HOME}/.local/bin /usr/local"
-#echo "before"
-#echo $PATH
-#for path in $BEFORE_PATHS
-#do
-#    pathmunge ${path}
-#    export PATH
-#done
-#echo "after"
-#echo $PATH
