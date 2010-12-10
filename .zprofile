@@ -26,7 +26,6 @@ if echo $( prompt -l ) | egrep "${ZSH_THEME}" > /dev/null; then
     prompt $ZSH_THEME
 fi
 
-export MANPATH=/opt/local/share/man:${MANPATH}
 export DISPLAY=:0.0
 
 export EDITOR="$( which vim ) -X"
@@ -45,5 +44,3 @@ fi
 export MODULEBUILDRC="$HOME/perl5/.modulebuildrc"
 export PERL_MM_OPT="INSTALL_BASE=$HOME/perl5"
 export PERL5LIB="$HOME/perl5/lib/perl5/i486-linux-gnu-thread-multi:$HOME/perl5/lib/perl5:$PERL5LIB"
-export PATH="$HOME/perl5/bin:$PATH"
-
