@@ -2,4 +2,7 @@ if [ -e $HOME/.zshrc_local ];then
     source $HOME/.zshrc_local
 fi
 
-case "$-" in *i*) byobu-launcher -xRR; esac;
+if [ $( which byobu-launcher > /dev/null 2&>1 ; echo -n $? ) -lt 1 ]; then
+    case "$-" in *i*) byobu-launcher -xRR; esac;
+fi
+
