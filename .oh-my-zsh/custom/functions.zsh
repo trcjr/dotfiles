@@ -48,7 +48,7 @@ function pathmunge {
 function splitstringby {
     string=$1
     delimeter=$2
-    for x in $( echo $PATH | tr ${delimeter} "\n" )
+    for x in $( echo $string | tr ${delimeter} "\n" )
     do
         echo $x
     done
