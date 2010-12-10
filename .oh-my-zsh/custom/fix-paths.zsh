@@ -2,8 +2,6 @@ source $ZSH/custom/functions.zsh
 #export MANPATH=/opt/local/share/man:${MANPATH}
 export DISPLAY=:0.0
 
-export PERL5LIB=${PERL5LIB}:${HOME}/.local/lib/perl5/site_perl/5.10.1
-
 if [ -d /opt/local/share/man ];
 then
     export MANPATH=/opt/local/share/man:${MANPATH}
