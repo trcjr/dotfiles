@@ -58,3 +58,8 @@ alias pmver="$( which perl ) -le '\$m = shift; eval qq(require \$m) or die qq(mo
 
 #alias cover="TEST_VERBOSE=1 HARNESS_PERL_SWITCHES=-MDevel::Cover=+select,/usr/local/vwh/library/perl prove -lvr --color --state=save --timer"
 alias cover="TEST_VERBOSE=1 prove -lvr --color --state=save --timer"
+
+
+if [ $( which hub > /dev/null 2&>1 ; echo -n $? ) -lt 1 ]; then
+    eval $( hub alias -s $( ps -p $$ | tail -n 1 | awk {'print $4'} | sed 's/^-//'))
+fi
