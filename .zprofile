@@ -33,14 +33,16 @@ export EDITOR="$( which vim ) -X"
 
 CVS_RSH=ssh
 
-source /home/trcjr/perl5/perlbrew/etc/bashrc
-
-source $ZSH/oh-my-zsh.sh
-
-if [ -e $HOME/.zprofile_local ];then
-    source $HOME/.zprofile_local
-fi
+#source $ZSH/oh-my-zsh.sh
 
 export MODULEBUILDRC="$HOME/perl5/.modulebuildrc"
 export PERL_MM_OPT="INSTALL_BASE=$HOME/perl5"
 export PERL5LIB="$HOME/perl5/lib/perl5/i486-linux-gnu-thread-multi:$HOME/perl5/lib/perl5:$PERL5LIB"
+
+FILES_TO_SOURCE=($HOME/perl5/perlbrew/etc/bashrc $HOME/.zprofile_local)
+for p in $FILES_TO_SOURCE
+do
+    if [ -e ${p} ]; then;
+        echo source ${p}
+    fi
+done
