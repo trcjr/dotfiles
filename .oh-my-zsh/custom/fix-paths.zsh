@@ -1,4 +1,19 @@
-source $ZSH/custom/functions.zsh
+
+POSSIBLE_FUNCTIONS_PATHS=(
+$ZSH
+${HOME}/.oh-my-zsh
+)
+if [ `eval functions | grep -w splitstringby2 | wc -l` -eq 0 ];then
+    for p in ${(Oa)POSSIBLE_FUNCTIONS_PATHS}
+    do
+        fp=${p}/custom/functions.zsh
+        if [ -e ${fp} ]; then;
+            echo source $fp
+            source $fp
+            break
+        fi
+    done
+fi
 #export MANPATH=/opt/local/share/man:${MANPATH}
 export DISPLAY=:0.0
 
@@ -7,9 +22,19 @@ then
     export MANPATH=/opt/local/share/man:${MANPATH}
 fi
 
-BEFORE_PATHS=(/usr/local/bin /opt/local/bin /opt/local/sbin /usr/local/bin /usr/local/sbin $HOME/perl5/bin $HOME/.local/bin ${HOME}/bin)
-for p in $BEFORE_PATHS
+BEFORE_PATHS=(
+${HOME}/bin
+$HOME/.local/bin
+$HOME/perl5/bin
+/usr/local/bin
+/usr/local/sbin
+/opt/local/bin
+/opt/local/sbin
+/sbin
+)
+for p in ${(Oa)BEFORE_PATHS}
 do
+    PATH=$(echo $PATH | sed -e "s;:\?${p};;" -e "s;${p}:\?;;")
     if [ -d ${p} ]; then;
         pathmunge ${p}
     fi
