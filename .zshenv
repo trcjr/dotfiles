@@ -1,1 +1,1 @@
-export PATH=$HOME/bin:$HOME/.local/bin:$PATH
+source $HOME/.oh-my-zsh/custom/fix-paths.zsh
