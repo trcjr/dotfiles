@@ -8,7 +8,6 @@ if [ `eval functions | grep -w splitstringby2 | wc -l` -eq 0 ];then
     do
         fp=${p}/custom/functions.zsh
         if [ -e ${fp} ]; then;
-            echo source $fp
             source $fp
             break
         fi
