@@ -43,6 +43,6 @@ FILES_TO_SOURCE=($HOME/perl5/perlbrew/etc/bashrc $HOME/.zprofile_local)
 for p in $FILES_TO_SOURCE
 do
     if [ -e ${p} ]; then;
-        echo source ${p}
+        source ${p}
     fi
 done
