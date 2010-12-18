@@ -6,7 +6,7 @@ ${HOME}/.oh-my-zsh
 if [ `eval functions | grep -w splitstringby2 | wc -l` -eq 0 ];then
     for p in ${(Oa)POSSIBLE_FUNCTIONS_PATHS}
     do
-        fp=${p}/custom/functions.zsh
+        fp=${p}/custom/002-functions.zsh
         if [ -e ${fp} ]; then;
             source $fp
             break
