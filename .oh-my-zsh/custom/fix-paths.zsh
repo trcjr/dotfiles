@@ -29,7 +29,10 @@ $HOME/perl5/bin
 /usr/local/sbin
 /opt/local/bin
 /opt/local/sbin
+/usr/sbin
 /sbin
+/usr/bin
+/bin
 )
 for p in ${(Oa)BEFORE_PATHS}
 do
