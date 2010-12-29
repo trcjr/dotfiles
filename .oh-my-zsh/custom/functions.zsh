@@ -34,6 +34,22 @@ function cert_check {
     #echo "hiii"
 }
 
+function remove_duplicate_strings {
+    printf "%s\n" "$1" | \
+      awk -F"$2" \
+       '{ \
+          a[$1]; \
+          printf "%s",$1; \
+          for(i=2;i<=NF;i++){ \
+            if(!($i in a)){ \
+              a[$i]; \
+              printf "%s%s",FS,$i; \
+            } \
+          }; \
+          printf "\n"; \
+        }'
+}
+
 function pathmunge {
     if ! echo $PATH | egrep -q "(^|:)$1($|:)" ; then
        if [ "$2" = "after" ] ; then
