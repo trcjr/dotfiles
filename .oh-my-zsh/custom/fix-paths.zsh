@@ -36,7 +36,7 @@ $HOME/perl5/bin
 )
 for p in ${(Oa)BEFORE_PATHS}
 do
-    PATH=$(echo $PATH | sed -e "s;:\?${p};;" -e "s;${p}:\?;;")
+    PATH=$( remove_duplicate_strings "$PATH" ":" )
     if [ -d ${p} ]; then;
         pathmunge ${p}
     fi
