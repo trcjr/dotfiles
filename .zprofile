@@ -46,3 +46,6 @@ do
         source ${p}
     fi
 done
+
+
+#alias cvsstat='cvs -n update 2>&1 | grep -P '\''(^(A|R|M|\?)|update aborted|warning)'\'''
