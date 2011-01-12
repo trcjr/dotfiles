@@ -33,8 +33,6 @@ fi
 
 CVS_RSH=ssh
 
-#source $ZSH/oh-my-zsh.sh
-
 export MODULEBUILDRC="$HOME/perl5/.modulebuildrc"
 export PERL_MM_OPT="INSTALL_BASE=$HOME/perl5"
 export PERL5LIB="$HOME/perl5/lib/perl5/i486-linux-gnu-thread-multi:$HOME/perl5/lib/perl5:$PERL5LIB"
@@ -47,7 +45,6 @@ do
     fi
 done
 
-
 #alias cvsstat='cvs -n update 2>&1 | grep -P '\''(^(A|R|M|\?)|update aborted|warning)'\'''
 
 if [ -z $OH_MY_ZSH__FIXED_PATHS ]; then
@@ -56,3 +53,8 @@ if [ -z $OH_MY_ZSH__FIXED_PATHS ]; then
     export OH_MY_ZSH__FIXED_PATHS
 fi
 
+if [[ $COLORTERM -eq "gnome-terminal" ]]; then
+    if [[ $TERM -eq "xterm" ]]; then
+        export TERM=xterm-256color
+    fi
+fi
