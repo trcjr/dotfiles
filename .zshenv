@@ -53,8 +53,8 @@ if [ -z $OH_MY_ZSH__FIXED_PATHS ]; then
     export OH_MY_ZSH__FIXED_PATHS
 fi
 
-if [[ $COLORTERM -eq "gnome-terminal" ]]; then
-    if [[ $TERM -eq "xterm" ]]; then
+if [[ "$COLORTERM" == "gnome-terminal" ]]; then
+    if [[ "$TERM" == "xterm" ]]; then
         export TERM=xterm-256color
     fi
 fi
