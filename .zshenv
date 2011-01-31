@@ -53,6 +53,11 @@ if [ -z $OH_MY_ZSH__FIXED_PATHS ]; then
     export OH_MY_ZSH__FIXED_PATHS
 fi
 
+$( which mvim > /dev/null 2>&1)
+if [[ $? -eq 0 ]]; then
+    export EDITOR=mvim
+fi
+
 if [[ "$COLORTERM" == "gnome-terminal" ]]; then
     if [[ "$TERM" == "xterm" ]]; then
         export TERM=xterm-256color
