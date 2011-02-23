@@ -53,8 +53,8 @@ if [ -z $OH_MY_ZSH__FIXED_PATHS ]; then
     export OH_MY_ZSH__FIXED_PATHS
 fi
 
-$( which mvim > /dev/null 2>&1)
-if [[ $? -eq 0 ]]; then
+MVIM_PATH=`which mvim 2>/dev/null`
+if [[ "$MVIM_PATH" != "mvim not found" && "$MVIM_PATH" != "" ]]; then
     export EDITOR=mvim
 fi
 
