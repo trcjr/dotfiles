@@ -49,6 +49,8 @@ alias -g H='| head'
 alias -g S='| sort'
 alias -g T='| tail'
 
+# vim
+alias vi >/dev/null 2>&1 || alias vi=vim
 
 ## rtorrent
 alias rtorrent='stty stop undef; stty start undef; /usr/bin/rtorrent'
