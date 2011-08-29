@@ -69,3 +69,27 @@ function splitstringby {
         echo $x
     done
 }
+
+function cvsdiff {
+    file=$1
+    version=$2
+    cvs diff -r $( cvs stat $file | sed -n 's/Working revision:\s\+\?\(.*\)/\1/p' | xargs echo ) -r $version $file | colordiff | less -R
+}
+
+function cvsup {
+    file=$1
+    version=$2
+    sudo cvs up -r $version $file
+}
+
+
+function dzil_cover_dir_serve {
+    PID_FILE=${HOME}/$( echo $( pwd ) | sed -e 's/\//_/g' -e 's/\(.*\)/.\1.pid/' );
+    COVERAGE_FILE=$(dzil cover 2>&1 | sed -n 's/\(.* to \)\(.*coverage.html\) \(.*\)/\2/p');
+    kill $( cat $PID_FILE 2>/dev/null) >/dev/null 2>&1;
+    ~/bin/dirserve --fork --directory  ${COVERAGE_FILE%/*} --index-page coverage.html --pid-file $PID_FILE > /dev/null 2>&1
+}
+
+function show_ssh_control_sessions {
+    ps x | grep -E ".*?.*ss[h] "
+}
