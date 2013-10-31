@@ -42,7 +42,7 @@ Bundle 'Tagbar'
 Bundle 'unimpaired.vim'
 Bundle 'VimOutliner'
 Bundle 'cucumber.zip'
-Bundle 'seoul256.vim'
+Bundle 'junegunn/seoul256.vim'
 
 filetype plugin indent on     " required!
 

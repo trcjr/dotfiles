@@ -97,7 +97,8 @@ set so=99999
 
 set background=dark
 "colorscheme solarized
-colorscheme jellybeans
+"colorscheme jellybeans
+colorscheme seoul256
 
 
 function! StatuslineTabWarning()
