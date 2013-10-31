@@ -52,4 +52,4 @@
 [branch]
 	autosetupmerge = true
 [merge]
-    verbosity = 5
+	verbosity = 5
