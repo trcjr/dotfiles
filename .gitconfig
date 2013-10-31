@@ -1,43 +1,55 @@
+# vim: set shiftwidth=4 noexpandtab:
 [user]
-    name = Theodore Robert Campbell Jr
-    email = trcjr@stupidfoot.com
+	name = Theodore Robert Campbell Jr
+	email = trcjr@stupidfoot.com
 [color]
-    branch = auto
-    diff = auto
-    status = auto
+	ui = auto
+	branch = auto
+	diff = auto
+	status = auto
 [color "branch"]
-    current = yellow reverse
-    local = yellow
-    remote = green
+	current = yellow reverse
+	local = yellow
+	remote = green
 [color "diff"]
-    meta = yellow bold
-    frag = magenta bold
-    old = red bold
-    new = green bold
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
 [color "status"]
-    added = yellow
-    changed = green
-    untracked = cyan
-[color]
-    ui = true
+	added = yellow
+	changed = green
+	untracked = cyan
 [core]
-    whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+	whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
 [alias]
-    add-modified = "!f() { git diff --name-status -r | sed 's/^M\\s\\(.*\\)/\"\\1\"/'; }; echo `f` | xargs -n 1 git add"
-    br = branch
-    changes = diff --name-status -r
-    ci = commit
-    co = checkout
-    df = diff
-    diff-staged = diff --cached
-    diffstat = diff --stat -r
-    lgg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %f %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
-    lgg2 = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %Cblue[%Creset%cn%Cblue]%Creset %f %Cgreen(%cr) %Creset' --abbrev-commit --date=relative
-    lg = log -p
-    st = status
-    unadd = update-index --force-remove
-    unstage = reset
+	#add-modified = "!f() { git diff --name-status -r | sed 's/^M\\s\\(.*\\)/\"\\1\"/'; }; echo `f` | xargs -n 1 git add"
+	add-modified = "!f() { git diff --name-only -r; }; echo `f` | xargs -n 1 git add"
+	br = branch
+	changes = diff --name-status -r
+	ci = commit
+	co = checkout
+	df = diff
+	diff-staged = diff --cached
+	diffstat = diff --stat -r
+	diverges = !sh -c 'git rev-list --boundary $1...$2 | grep ^- | cut -c2-'
+	dump = cat-file -p
+	l=log --pretty=format:'%Cred%h%Creset -%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+	lg = log -p
+	#lgg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %Cblue[%Creset%cn%Cblue]%Creset %f %Cgreen(%cr) %Creset' --abbrev-commit --date=relative
+	lgg = log --graph --pretty=format:'%C(red)%h %C(magenta)-%C(yellow)%d%C(reset) %s %C(blue)[%C(reset)%aN%C(blue)] %C(green)(%cr)' --abbrev-commit --date=short
+	lgg1 = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %f %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+	lgga = log --graph --branches --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %Cblue[%Creset%cn%Cblue]%Creset %f %Cgreen(%cr) %Creset' --abbrev-commit --date=relative
+	purr = pull --rebase
+	ready = rebase -i @{u}
+	shot-web = help
+	st = status
+	standup = "!git log --since yesterday --author `git config user.email` --pretty=short"
+	type = cat-file -t
+	unadd = update-index --force-remove
+	unstage = reset
 [branch]
-    autosetupmerge = true
+	autosetupmerge = true
 [merge]
     verbosity = 5

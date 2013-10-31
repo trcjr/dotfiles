@@ -1,10 +1,13 @@
 " Vundle and bundles configuration
-source .bundles.vimrc
+source ~/.bundles.vimrc
 
 syntax on
 
 " backspaces over everything in insert mode
 set backspace=indent,eol,start
+
+" make netrw be quiet
+let g:netrw_silent = 1
 
 " Indent
 set autoindent
@@ -83,6 +86,8 @@ let g:NERDTreeDirArrows=0
 nnoremap <F5> :GundoToggle<cr>
 noremap  <leader>gu :GundoToggle<cr>
 
+map <leader>tts :%s/\s\+$//<cr>
+
 
 set colorcolumn=0
 set nocursorline
@@ -121,13 +126,21 @@ function! StatuslineCurrentHighlight()
     endif
 endfunction
 
+" Perl shortcuts
+map <Leader>pd :!perldoc %<cr>
+map <Leader>M :!perl % daemon --reload<cr>
+map <Leader>x :!perl -Ilib %<cr>
+
 " perltidy
-autocmd BufRead,BufNewFile *.t,*.pl,*.plx,*.pm command! -range=% -nargs=* Tidy <line1>,<line2>!perltidy -q
-autocmd BufRead,BufNewFile *.t,*.pl,*.plx,*.pm noremap <Leader>pt :Tidy<CR>
+autocmd BufRead,BufNewFile *.t,*.pl,*.plx,*.pm,*.cgi command! -range=% -nargs=* Tidy <line1>,<line2>!perltidy -q
+autocmd BufRead,BufNewFile *.t,*.pl,*.plx,*.pm,*.cgi noremap <Leader>pt :Tidy<CR>
+autocmd BufRead,BufNewFile *.t,*.pl,*.plx,*.pm,*.cgi set filetype=perl
 
+" perldoc for module || perl command
+noremap K :!perldoc <cword> <bar><bar> perldoc -f <cword><cr>
 
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
-set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+set wildignore+=*.so,*.swp,*.zip     " MacOSX/Linux
+set wildignore+=*.swp,*.zip,*.exe  " Windows
 
 " ctrlp
 let g:ctrlp_cmd = 'CtrlPMixed'

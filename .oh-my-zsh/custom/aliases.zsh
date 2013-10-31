@@ -52,18 +52,23 @@ alias -g T='| tail'
 # vim
 alias vi >/dev/null 2>&1 || alias vi=vim
 
+#alias 'tmux'="for x in SSH_CLIENT SSH_TTY SSH_AUTH_SOCK SSH_CONNECTION ; do (eval \$x=\\$\$x) | sed -e 's/=/=\"/' -e 's/$/\"/' -e 's/^/export /'; done; tmux"
+#alias 'tmux'="for x in SSH_CLIENT SSH_TTY SSH_AUTH_SOCK SSH_CONNECTION ; do (echo eval \$x=\\$\$x) | sed -e 's/=/=\"/' -e 's/$/\"/' -e 's/^/export /'; done; export | grep -i ssh"
+
 ## rtorrent
 alias rtorrent='stty stop undef; stty start undef; /usr/bin/rtorrent'
 
-alias pmver="$( which perl ) -le '\$m = shift; eval qq(require \$m) or die qq(module \"\$m\" is not installed\\n); (\$f = \$m) =~ s@::@/@g; \$f .= \".pm\"; print qq(Location: \$INC{\$f}); if (not defined \$m->VERSION) { print qq(\"\$m\" has no VERSION specified\\n) } else { print qq(Version: ), \$m->VERSION }'" 
+alias pmver="perl -le '\$m = shift; eval qq(require \$m) or die qq(module \"\$m\" is not installed\\n); (\$f = \$m) =~ s@::@/@g; \$f .= \".pm\"; print qq(Location: \$INC{\$f}); if (not defined \$m->VERSION) { print qq(\"\$m\" has no VERSION specified\\n) } else { print qq(Version: ), \$m->VERSION }'" 
 
 
-#alias cover="TEST_VERBOSE=1 HARNESS_PERL_SWITCHES=-MDevel::Cover=+select,/usr/local/vwh/library/perl prove -lvr --color --state=save --timer"
-alias cover="TEST_VERBOSE=1 prove -lvr --color --state=save --timer"
+##alias cover="TEST_VERBOSE=1 HARNESS_PERL_SWITCHES=-MDevel::Cover=+select,/usr/local/vwh/library/perl prove -lvr --color --state=save --timer"
+#alias cover="TEST_VERBOSE=1 prove -lvr --color --state=save --timer"
+#
+#
+##if [ $( which hub >/dev/null 2&>1 ; echo -n $? ) -lt 1 ]; then
+##if [ $( which hub >/dev/null 2&>1 ; echo -n $? ) -lt 1 ]; then
+#if [ $( which hub > /dev/null 2>&1 ; echo -n $? ) -lt 1 ]; then
+#    eval $( hub alias -s $( ps -p $$ | tail -n 1 | awk {'print $4'} | sed 's/^-//'))
+#fi
 
 
-#if [ $( which hub >/dev/null 2&>1 ; echo -n $? ) -lt 1 ]; then
-#if [ $( which hub >/dev/null 2&>1 ; echo -n $? ) -lt 1 ]; then
-if [ $( which hub > /dev/null 2>&1 ; echo -n $? ) -lt 1 ]; then
-    eval $( hub alias -s $( ps -p $$ | tail -n 1 | awk {'print $4'} | sed 's/^-//'))
-fi

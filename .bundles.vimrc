@@ -2,16 +2,19 @@ set nocompatible               " be improved
 filetype off                   " required!
 
 let vundleAlreadyExists=1
-let s:vundle_dir=expand('$HOME/.vim/bundle/vundle', 1)
+"let s:vundle_dir=expand('$HOME/.vim/bundle/vundle', 1)
+let s:vundle_parent_dir=expand('$HOME/.vim/bundle', 1)
+let s:vundle_dir=expand(s:vundle_parent_dir) . expand('/vundle')
 
 "if !filereadable(s:vundle_dir)
 if !isdirectory(s:vundle_dir)
     echo "Installing Vundle..."
+    echo "Installing Vundle into '" . expand(s:vundle_dir) . "'"
     echo ""
-    if isdirectory(expand('$VIM\bundle')) == 0
-        call mkdir(expand('$VIM\bundle'), 'p')
+    if isdirectory(expand(s:vundle_parent_dir)) == 0
+        call mkdir(expand(s:vundle_parent_dir), 'p')
     endif
-    execute 'silent !git clone https://github.com/gmarik/vundle "' . expand('$VIM\bundle\vundle') . '"'
+    execute 'silent !git clone https://github.com/gmarik/vundle "' . expand(s:vundle_dir) . '"'
     let vundleAlreadyExists=0
 endif
 
@@ -22,6 +25,8 @@ call vundle#rc()
 " required! 
 Bundle 'gmarik/vundle'
 
+Bundle 'netrw.vim'
+"Bundle 'vim-perl/vim-perl'
 Bundle 'tpope/vim-fugitive'
 Bundle 'vim-scripts/Gundo'
 Bundle 'vim-scripts/bufexplorer.zip'
@@ -37,6 +42,7 @@ Bundle 'Tagbar'
 Bundle 'unimpaired.vim'
 Bundle 'VimOutliner'
 Bundle 'cucumber.zip'
+Bundle 'seoul256.vim'
 
 filetype plugin indent on     " required!
 

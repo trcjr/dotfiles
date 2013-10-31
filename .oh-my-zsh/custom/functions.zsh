@@ -1,5 +1,5 @@
 function duhs {
-        /usr/bin/du -sk * | sort -nr | cut -f2 | awk -F "\n" '{print "\""$1"\""}' | xargs /usr/bin/du -sh
+        /usr/bin/du -sk .* * | sort -nr | cut -f2 | awk -F "\n" '{print "\""$1"\""}' | xargs /usr/bin/du -sh
 }
 
 function cert_check {
@@ -92,4 +92,8 @@ function dzil_cover_dir_serve {
 
 function show_ssh_control_sessions {
     ps x | grep -E ".*?.*ss[h] "
+}
+
+function platform {
+    TERM=linux sudo ssh root@$1
 }
