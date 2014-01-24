@@ -1,5 +1,75 @@
 " Vundle and bundles configuration
-source ~/.bundles.vimrc
+set nocompatible               " be improved
+filetype off                   " required!
+
+" Setting up Vundle - the vim plugin bundler
+let iCanHazVundle=1
+let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
+if !filereadable(vundle_readme)
+    echo "Installing Vundle.."
+    echo ""
+    silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+    let iCanHazVundle=0
+endif
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+Bundle 'gmarik/vundle'
+
+" The list of bundles is sorted!
+Bundle 'CSApprox'
+Bundle 'Tabular'
+Bundle 'Tagbar'
+Bundle 'ack.vim'
+Bundle 'cucumber.zip'
+Bundle 'junegunn/seoul256.vim'
+Bundle 'kien/ctrlp.vim'
+Bundle 'nanotech/jellybeans.vim'
+Bundle 'netrw.vim'
+Bundle 'perlomni.vim'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/nerdtree'
+Bundle 'snipMate'
+Bundle 'tpope/vim-fugitive'
+Bundle 'trcjr/vim-perl'
+Bundle 'trcjr/vimoutliner'
+Bundle 'unimpaired.vim'
+Bundle 'vim-scripts/Gundo'
+Bundle 'vim-scripts/bufexplorer.zip'
+Bundle 'w0ng/vim-hybrid'
+"Bundle 'nodeunit.vim'
+"Bundle 'node.js'
+"Bundle 'pangloss/vim-javascript'
+
+
+
+
+if iCanHazVundle == 0
+    echo "Installing Bundles, please ignore key map error messages"
+    echo ""
+    silent :BundleInstall
+    :quit
+endif
+
+
+
+
+" Setting up Vundle - the vim plugin bundler end
+
+filetype plugin indent on     " required!
+
+"
+" Brief help
+" :BundleList          - list configured bundles
+" :BundleInstall(!)    - install(update) bundles
+" :BundleSearch(!) foo - search(or refresh cache first) for foo
+" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+"
+" see :h vundle for more details or wiki for FAQ
+" NOTE: comments after Bundle command are not allowed..
+
+
 
 syntax on
 
