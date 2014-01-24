@@ -1,28 +1,19 @@
 set nocompatible               " be improved
 filetype off                   " required!
 
-let vundleAlreadyExists=1
-"let s:vundle_dir=expand('$HOME/.vim/bundle/vundle', 1)
-let s:vundle_parent_dir=expand('$HOME/.vim/bundle', 1)
-let s:vundle_dir=expand(s:vundle_parent_dir) . expand('/vundle')
-
-"if !filereadable(s:vundle_dir)
-if !isdirectory(s:vundle_dir)
-    echo "Installing Vundle..."
-    echo "Installing Vundle into '" . expand(s:vundle_dir) . "'"
+" Setting up Vundle - the vim plugin bundler
+let iCanHazVundle=1
+let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
+if !filereadable(vundle_readme)
+    echo "Installing Vundle.."
     echo ""
-    if isdirectory(expand(s:vundle_parent_dir)) == 0
-        call mkdir(expand(s:vundle_parent_dir), 'p')
-    endif
-    execute 'silent !git clone https://github.com/gmarik/vundle "' . expand(s:vundle_dir) . '"'
-    let vundleAlreadyExists=0
+    silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+    let iCanHazVundle=0
 endif
-
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " let Vundle manage Vundle
-" required! 
 Bundle 'gmarik/vundle'
 
 Bundle 'netrw.vim'
@@ -48,6 +39,21 @@ Bundle 'w0ng/vim-hybrid'
 "Bundle 'nodeunit.vim'
 "Bundle 'node.js'
 "Bundle 'pangloss/vim-javascript'
+
+
+
+
+if iCanHazVundle == 0
+    echo "Installing Bundles, please ignore key map error messages"
+    echo ""
+    silent :BundleInstall
+    :quit
+endif
+
+
+
+
+" Setting up Vundle - the vim plugin bundler end
 
 filetype plugin indent on     " required!
 
