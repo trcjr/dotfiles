@@ -1,10 +1,10 @@
 # Path to your oh-my-zsh configuration.
 export ZSH=$HOME/.oh-my-zsh
 export LANG=en_US.UTF-8
-export LC_CTYPE=en_US.UTF-8
-export NLS_LANG=AMERICAN_AMERICA.AL32UTF8
 export LANGUAGE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
+export NLS_LANG=AMERICAN_AMERICA.AL32UTF8
 
 export TZ="America/New_York"
 

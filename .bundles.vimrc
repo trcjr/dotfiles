@@ -26,7 +26,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 Bundle 'netrw.vim'
-"Bundle 'vim-perl/vim-perl'
+Bundle 'trcjr/vim-perl'
 Bundle 'tpope/vim-fugitive'
 Bundle 'vim-scripts/Gundo'
 Bundle 'vim-scripts/bufexplorer.zip'
@@ -42,7 +42,12 @@ Bundle 'Tagbar'
 Bundle 'unimpaired.vim'
 Bundle 'VimOutliner'
 Bundle 'cucumber.zip'
+Bundle 'ack.vim'
 Bundle 'junegunn/seoul256.vim'
+Bundle 'w0ng/vim-hybrid'
+"Bundle 'nodeunit.vim'
+"Bundle 'node.js'
+"Bundle 'pangloss/vim-javascript'
 
 filetype plugin indent on     " required!
 

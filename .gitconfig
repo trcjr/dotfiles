@@ -36,9 +36,9 @@
 	diverges = !sh -c 'git rev-list --boundary $1...$2 | grep ^- | cut -c2-'
 	dump = cat-file -p
 	l=log --pretty=format:'%Cred%h%Creset -%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
-	lg = log -p
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	#lgg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %Cblue[%Creset%cn%Cblue]%Creset %f %Cgreen(%cr) %Creset' --abbrev-commit --date=relative
-	lgg = log --graph --pretty=format:'%C(red)%h %C(magenta)-%C(yellow)%d%C(reset) %s %C(blue)[%C(reset)%aN%C(blue)] %C(green)(%cr)' --abbrev-commit --date=short
+	lgg = log --graph --pretty=format:'%C(red)%h %C(magenta)-%C(yellow)%d%C(reset) %s %C(blue)[%C(reset)%aN%C(blue)] %C(green)(%cr)%Creset' --abbrev-commit --date=short
 	lgg1 = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %f %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
 	lgga = log --graph --branches --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %Cblue[%Creset%cn%Cblue]%Creset %f %Cgreen(%cr) %Creset' --abbrev-commit --date=relative
 	purr = pull --rebase
@@ -53,3 +53,11 @@
 	autosetupmerge = true
 [merge]
 	verbosity = 5
+[github]
+	user = trcjr
+	token = cfc6b516ca7f7751aca03ea2b4ee1a99
+[cola]
+	fontdiff = DejaVu Sans Mono,8,-1,5,50,0,0,0,0,0
+	tabwidth = 4
+[diff]
+	tool = gvimdiff

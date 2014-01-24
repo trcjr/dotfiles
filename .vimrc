@@ -56,12 +56,31 @@ set numberwidth=5
 " save files as root without prior sudo
 cmap w!! w !sudo tee % >/dev/null
 
+set list
+set listchars=tab:.\ ,extends:#,nbsp:.,trail:.
+set listchars=tab:▸\ ,eol:¬,extends:#,nbsp:.,trail:.
+set listchars=tab:▸\ ,eol:¬,extends:#,nbsp:.,trail:.
+set listchars=tab:▸\ ,extends:#,nbsp:.,trail:.
+
+"let s:theoToggleCharsState = 0
+"function TheoToggleListChars ()
+"    if s:theoToggleCharsState == 0
+"        set listchars=tab:.\ ,trail:.,extends:#,nbsp:.
+"        let s:theoToggleCharsState = 1
+"    else
+"        set listchars=tab:▸\ ,eol:¬,extends:#,nbsp:.,trail:.
+"    endif
+"endfunction
+"map <F7> :call TheoToggleListChars()<cr>
+
 " shortcuts
 inoremap jj <Esc>
 
 nnoremap ; :
 
 let mapleader = ","
+
+map <leader>R :source ~/.vimrc<cr>
 
 " NERDTree shortcuts
 map <Leader>, :NERDTreeToggle<cr>
@@ -127,6 +146,15 @@ function! StatuslineCurrentHighlight()
     endif
 endfunction
 
+
+"  ____           _
+" |  _ \ ___ _ __| |
+" | |_) / _ \ '__| |
+" |  __/  __/ |  | |
+" |_|   \___|_|  |_|
+
+
+
 " Perl shortcuts
 map <Leader>pd :!perldoc %<cr>
 map <Leader>M :!perl % daemon --reload<cr>
@@ -140,8 +168,27 @@ autocmd BufRead,BufNewFile *.t,*.pl,*.plx,*.pm,*.cgi set filetype=perl
 " perldoc for module || perl command
 noremap K :!perldoc <cword> <bar><bar> perldoc -f <cword><cr>
 
-set wildignore+=*.so,*.swp,*.zip     " MacOSX/Linux
-set wildignore+=*.swp,*.zip,*.exe  " Windows
+
+"  ____        _
+" |  _ \ _   _| |__  _   _
+" | |_) | | | | '_ \| | | |
+" |  _ <| |_| | |_) | |_| |
+" |_| \_\\__,_|_.__/ \__, |
+"                    |___/
+
+autocmd FileType ruby set tabstop=2
+autocmd FileType ruby set shiftwidth=2
+autocmd FileType ruby set expandtab
+autocmd FileType ruby set softtabstop=2
+
+
+
+"  __  __ _
+" |  \/  (_)___  ___
+" | |\/| | / __|/ __|
+" | |  | | \__ \ (__
+" |_|  |_|_|___/\___|
+"
 
 " ctrlp
 let g:ctrlp_cmd = 'CtrlPMixed'
@@ -152,11 +199,14 @@ nmap <F8> :TagbarToggle<CR>
 map <silent><Leader>tb :TagbarToggle<cr>
 let g:tagbar_autofocus = 1
 
-" Ruby 
-autocmd FileType ruby set tabstop=2
-autocmd FileType ruby set shiftwidth=2
-autocmd FileType ruby set expandtab
-autocmd FileType ruby set softtabstop=2
+"set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+"set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+
+set wildignore+=*.so,*.swp,*.zip     " MacOSX/Linux
+set wildignore+=*.swp,*.zip,*.exe  " Windows
+
+
+
 
 "
 " Brief help
