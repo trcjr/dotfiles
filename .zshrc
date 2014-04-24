@@ -24,20 +24,20 @@ export DISABLE_AUTO_UPDATE="true"
 
 # Uncomment following line if you want to disable colors in ls
 # export DISABLE_LS_COLORS="true"
-export NO_GIT_PROMPT_INFO="true"
+#export NO_GIT_PROMPT_INFO="true"
 export NO_VIRTUALENV_PROMPT_INFO="true"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git git-extras github perlbrew rvm encode64 git-flow)
+plugins=(git git-extras github perlbrew rvm encode64 git-flow virtualenvwrapper)
 
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
 unsetopt share_history
 
-export PATH=$HOME/bin:$HOME/.local/bin:$HOME/perl5/bin:$PATH:/sbin:/usr/sbin:/usr/local/sbin
+export PATH=node_modules/.bin:$HOME/bin:$HOME/.local/bin:$HOME/perl5/bin:$PATH:/sbin:/usr/sbin:/usr/local/sbin
 
 export EDITOR=vim
 export MANPATH=/home/tcampbell/.local/share/man:/home/tcampbell/perl5/man:/usr/local/vwh/library/perl5/man:/usr/kerberos/man:/usr/local/share/man:/usr/share/man/en:/usr/share/man:/usr/X11R6/man:/usr/local/man
