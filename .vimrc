@@ -1,16 +1,21 @@
-" Vundle and bundles configuration
 set nocompatible               " be improved
 filetype off                   " required!
 
-" Setting up Vundle - the vim plugin bundler
-let iCanHazVundle=1
-let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
-if !filereadable(vundle_readme)
-    echo "Installing Vundle.."
+let vundleAlreadyExists=1
+let s:vundle_dir=expand('$HOME/.vim/bundle/vundle', 1)
+
+if !isdirectory(s:vundle_dir)
+    echo "Installing Vundle..."
     echo ""
-    silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
-    let iCanHazVundle=0
+    if isdirectory(s:vundle_dir) == 0
+        echo "creating directory '" . s:vundle_dir . "'"
+        call mkdir(s:vundle_dir, 'p')
+    endif
+    execute 'silent !git clone https://github.com/gmarik/vundle "' . s:vundle_dir . '"'
+    let vundleAlreadyExists=0
 endif
+
+
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
@@ -18,12 +23,18 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " The list of bundles is sorted!
+"Bundle 'node.js'
+"Bundle 'nodeunit.vim'
+"Bundle 'pangloss/vim-javascript'
+"Bundle 'vim-perl/vim-perl'
 Bundle 'CSApprox'
 Bundle 'Tabular'
 Bundle 'Tagbar'
+Bundle 'VimOutliner'
 Bundle 'ack.vim'
 Bundle 'cucumber.zip'
 Bundle 'junegunn/seoul256.vim'
+Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'netrw.vim'
@@ -31,27 +42,20 @@ Bundle 'perlomni.vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'snipMate'
+Bundle 'tpope/vim-cucumber'
 Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-markdown'
 Bundle 'trcjr/vim-perl'
 Bundle 'trcjr/vimoutliner'
 Bundle 'unimpaired.vim'
 Bundle 'vim-scripts/Gundo'
 Bundle 'vim-scripts/bufexplorer.zip'
 Bundle 'w0ng/vim-hybrid'
-"Bundle 'nodeunit.vim'
-"Bundle 'node.js'
-"Bundle 'pangloss/vim-javascript'
 
-
-
-
-if iCanHazVundle == 0
-    echo "Installing Bundles, please ignore key map error messages"
-    echo ""
-    silent :BundleInstall
-    :qall
+if vundleAlreadyExists == 0
+    BundleInstall
+    quit
 endif
-
 
 
 
