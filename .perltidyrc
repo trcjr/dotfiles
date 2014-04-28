@@ -1,0 +1,40 @@
+# modified PBP .perltidyrc file
+
+-l=120   # Max line width is unlimited
+-i=4     # Indent level is 4 cols
+-ci=4    # Continuation indent is 4 cols
+-st      # Output to STDOUT
+-se      # Errors to STDERR
+-vt=2    # Maximal vertical tightness
+-cti=0   # No extra indentation for closing brackets
+-pt=0    # parenthesis tightness
+-bt=1    # brace tightness
+-sbt=0   # square bracket tightness
+-bbt=0   # Medium block brace tightness
+-nsfs    # No space before semicolons
+-nolq    # Don't outdent long quoted strings
+-ce      # cuddle the else
+-bar     # braces on the right
+-nsbl    # subroutine braces on sub title line
+-nsfs    # no space before loop semicolons
+#-isbc    # indent block comments with leading spaces
+-nolq    # never outdent long quotes
+-nolc    # never outdent long comments
+-hsc     # line up hanging side comments
+-csc     # all subroutines should have closing side comments
+-csci=25 # closing side comments only if there are at least 15 lines between the open and close
+-wba="% + - * / x != == >= <= =~ < > | & || && **= += *= &= <<= &&= -= /= |= + >>= ||= .= %= ^= x=" # Break before all operators
+
+
+
+
+#-csc     # Closing side comments
+#-csci 50 # Only add csc when there are more than x lines
+#-i 4     # tab for 4 spaces
+#-kis     # --keep-interior-semicolons
+#-l 120   # I have a wide terminal, why stop at 80?
+#-sct     # Stack closing tokens
+#-se      # Errors to stderr
+#-sot     # Stack opening tokens
+#-vt 1    # Vertical tight
+#-w       # Warnings
