@@ -51,6 +51,7 @@
 	unstage = reset
 [branch]
 	autosetupmerge = true
+	autosetuprebase = true
 [merge]
 	verbosity = 5
 [github]

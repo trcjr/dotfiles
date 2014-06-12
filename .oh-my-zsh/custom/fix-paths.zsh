@@ -14,7 +14,7 @@ if [ `eval functions | grep -w splitstringby2 | wc -l` -eq 0 ];then
     done
 fi
 #export MANPATH=/opt/local/share/man:${MANPATH}
-export DISPLAY=:0.0
+#export DISPLAY=:0.0
 
 if [ -d /opt/local/share/man ];
 then
