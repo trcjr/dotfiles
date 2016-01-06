@@ -41,7 +41,7 @@ Bundle 'perlomni.vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'snipMate'
-Bundle 'tpope/vim-cucumber'
+"Bundle 'tpope/vim-cucumber'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-markdown'
 Bundle 'trcjr/vim-perl'
@@ -189,7 +189,8 @@ set so=99999
 
 set background=dark
 "colorscheme solarized
-colorscheme jellybeans
+"colorscheme jellybeans
+colorscheme hybrid
 "colorscheme seoul256
 
 
